@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Discord Status — System Health Monitor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-layout">
+        <div class="top-bar">
+            <span class="version-tag">System Monitor v2.4.0 Stable</span>
+        </div>
+
+        <div class="main-wrapper">
+            <header class="header">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <h1 class="title">Discord Status Monitor</h1>
+                        <p class="subtitle">Real-time service health & incident tracking</p>
+                    </div>
+                    
+                    <div class="header-controls">
+                        <div class="auto-refresh">
+                            <label for="interval">Auto-refresh</label>
+                            <select id="interval">
+                                <option value="0">Off</option>
+                                <option value="30">30s</option>
+                                <option value="60" selected>60s</option>
+                                <option value="300">5m</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" id="refresh">
+                            <span class="icon">↻</span> Refresh
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="container">
+                <section class="status-hero">
+                    <div class="status-card">
+                        <div class="status-indicator" id="indicator"></div>
+                        <div class="status-content">
+                            <h2 id="description" class="status-title">System Operational</h2>
+                            <p id="last-updated" class="status-time">Check performed: 12 seconds ago</p>
+                        </div>
+                        <div class="uptime-percentage">
+                            <span class="label">99.98%</span>
+                            <span class="subtext">30-day uptime</span>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="dashboard-grid">
+                    <section class="services-section">
+                        <div class="section-header">
+                            <h2>Core Services</h2>
+                        </div>
+                        <div id="components" class="services-grid">
+                            </div>
+                    </section>
+
+                    <section class="incidents-section">
+                        <div class="section-header">
+                            <h2>Recent Incidents</h2>
+                        </div>
+                        <div id="incidents" class="incidents-list">
+                            <div class="incident-item empty">
+                                <p>No active incidents reported.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <p class="footer-note">© 2026 StatusRelay. Powered by DiscordStatus API.</p>
+            </footer>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

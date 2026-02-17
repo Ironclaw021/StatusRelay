@@ -1,0 +1,13 @@
+{
+  "name": "discord-status-proxy",
+  "version": "1.0.0",
+  "description": "Static site + small proxy to fetch Discord Statuspage API (avoid CORS)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7"
+  }
+}
